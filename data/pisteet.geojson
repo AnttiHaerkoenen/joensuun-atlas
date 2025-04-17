@@ -1,0 +1,37 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+            "name": "Vanha aitta",
+            "text": "Lorem ipsum",
+            "url": "https://joensuunvirta.fi/vanhajoensuu/content_img/kortteli56/kortteli56_tontti1_2_b.jpg",
+            "start": "1970-01-01",
+            "end": "2014-12-04"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [
+                62.598372, 29.761164
+            ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+            "name": "Joensuun lyseo",
+            "text": "Lorem ipsum",
+            "url": "https://joensuunvirta.fi/vanhajoensuu/content_img/kortteli31/kortteli31_tontti1_1_b.jpg",
+            "start": "1950-01-01",
+            "end": "2014-12-04"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [
+                62.601375, 29.758444
+            ]
+        }
+      }
+    ]
+  }

@@ -9,6 +9,7 @@
 	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+	<script src="./leaflet.timeline.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 	<style>
@@ -32,6 +33,9 @@
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
+		$.getJSON('./data/pisteet.geojson', function(data) {
+			L.Timeline(data).addTo(map);
+		})
 		$.getJSON('https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_50m_admin_0_countries.geojson', function(data) {
 			L.geoJson(data, {
 				style: function(feature) {
@@ -44,8 +48,35 @@
 					return feature.properties.income_grp == '1. High income: OECD';
 				}
 			}).addTo(map);
-			
 		});
+		var timeline;
+      	var timelineControl;
+
+		$.getJSON()
+      	function onLoadData(data) {
+        	timeline = L.timeline(data, {
+				style: function (data) {
+					return {
+              			color: "#ff0000",
+              			fillOpacity: 0.5,
+					};
+				},
+				waitToUpdateMap: true,
+				onEachFeature: function (feature, layer) {
+					layer.bindTooltip(feature.properties.name);
+				},
+			});
+			
+			timelineControl = L.timelineSliderControl({
+				formatOutput: function (date) {
+					return new Date(date).toLocaleDateString();
+				},
+				enableKeyboardControls: true,
+			});
+			timeline.addTo(map);
+			timelineControl.addTo(map);
+			timelineControl.addTimelines(timeline);
+		}
     </script>
 </body>
 </html>

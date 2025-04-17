@@ -1,0 +1,24 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+            "name": "Kaupungintalo",
+            "text": "Lorem ipsum",
+            "url": "https://joensuunvirta.fi/vanhajoensuu/content_img/kaupungintalo_1_b.jpg",
+            "start": "1970-01-01",
+            "end": "2014-12-04"
+        },
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [[
+                [62.599869, 29.764921],
+                [62.600087, 29.765809],
+                [62.599724, 29.765546],
+                [62.599822, 29.764996]
+            ]]
+        }
+      }
+    ]
+  }
