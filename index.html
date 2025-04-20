@@ -29,37 +29,33 @@
 <body>
     <div id='map'></div>
     <script>
-		START = '1850';
-		END = '2025';
+		START = '1850-01-01';
+		END = '2025-12-31';
         var map = new L.map('map').setView([62.599977, 29.756126], 15);
+		var timeline;
+		var timelineControl;
 
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 		$.getJSON('https://raw.githubusercontent.com/AnttiHaerkoenen/joensuun-atlas/refs/heads/main/data/pisteet.geojson', function(data) {
+			var timeline = L.timeline(data, {
+				waitToUpdateMap: true,
+				onEachFeature: function (feature, layer) {
+					layer.bindPopup('<img src="' + feature.properties.url + '"width="200" height="150">');
+				},
+			});
 			var timelineControl = L.timelineSliderControl({
 				formatOutput: function (date) {
-					return new Date(date).getFullYear();
+					return new Date(date).toLocaleDateString();
 				},
 				enableKeyboardControls: true,
 				start: START,
-				end: END,
+				end: END
 			});
-			var timeline = L.timeline(data, {
-				pointToLayer: function (data, latlng) {
-					var hue_min = 120;
-					var hue_max = 0;
-					var hue = 120;
-					return L.circleMarker(latlng, {
-						radius: 10,
-						color: "hsl(" + hue + ", 100%, 50%)",
-						fillColor: "hsl(" + hue + ", 100%, 50%)",
-					}).bindPopup('<img src="' + data.properties.url + '">');
-				},
-			});
+			timeline.addTo(map);
 			timelineControl.addTo(map);
 			timelineControl.addTimelines(timeline);
-			timeline.addTo(map);
 		})
 	</script>
 </body>
