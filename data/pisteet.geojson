@@ -7,8 +7,8 @@
             "name": "Vanha aitta",
             "text": "Lorem ipsum",
             "url": "https://joensuunvirta.fi/vanhajoensuu/content_img/kortteli56/kortteli56_tontti1_2_b.jpg",
-            "start": "1970-01-01",
-            "end": "1990-12-04"
+            "start": 31519879,
+            "end": 662671879
         },
         "geometry": {
             "type": "Point",
@@ -23,8 +23,8 @@
             "name": "Joensuun lyseo",
             "text": "Lorem ipsum",
             "url": "https://joensuunvirta.fi/vanhajoensuu/content_img/kortteli31/kortteli31_tontti1_1_b.jpg",
-            "start": "1980-01-01",
-            "end": "2014-12-04"
+            "start": 347139079,
+            "end": 1420054279
         },
         "geometry": {
             "type": "Point",
