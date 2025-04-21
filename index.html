@@ -21,10 +21,17 @@
 		}
 
 		.leaflet-container {
-			height: 600px;
-			width: 1000px;
+			height: 100%;
+			width: 100%;
 			max-width: 100%;
 			max-height: 100%;
+		}
+
+		.Ikkuna {
+			text-align: left;
+            top: 1%;
+            left: 1%;
+            right: 1%;
 		}
 	</style>
 </head>
@@ -32,9 +39,11 @@
 <body>
 	<div id='map'></div>
 	<script>
-		START = -3777336510000;
+		START = -3840351650000;
 		END = 1735673479000;
 		var map = new L.map('map').setView([62.599977, 29.756126], 15);
+		var kuvakorkeus = "150";
+		var kuvaleveys = "200";
 		var timeline;
 		var timelineControl;
 		var data_url = 'https://raw.githubusercontent.com/AnttiHaerkoenen/joensuun-atlas/refs/heads/main/data/kohteet.geojson';
@@ -48,16 +57,18 @@
 				waitToUpdateMap: true,
 				style: function (feature) {
 					switch (feature.properties.tyyppi) {
-						case 'julkinen': return {color: "#0000ff"};
-						case 'yksityinen': return {color: "#ff0000"};
+						case 'julkinen': return {color: "#ff0000"};
+						case 'yksityinen': return {color: "#0000ff"};
 						case 'puisto': return {color: "#00ff00"};
 					}
 				},
 				onEachFeature: function (feature, layer) {
 					layer.bindPopup(
-						'<div><h2>' + feature.properties.nimi + '</h2>' 
-							+ '<img src="' + feature.properties.url + '"width="200" height="150">' 
-							+ '<p>' + feature.properties.teksti + '</p></div>'
+						'<div class="Ikkuna"><h2>' + feature.properties.nimi + '</h2>' 
+							+ '<a href=' + feature.properties.url + '><img src="' + feature.properties.url + '"width=' + kuvaleveys + ' height=' + kuvakorkeus + '> </a>' 
+							+ '<p>' + feature.properties.teksti + '</p></div>', {
+								maxWidth: kuvaleveys,
+							}
 					);
 				},
 			});
