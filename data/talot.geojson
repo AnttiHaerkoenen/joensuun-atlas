@@ -26,7 +26,7 @@
         "properties": {
             "nimi": "Muu",
             "teksti": "Lorem ipsum",
-            "tyyppi": "yksityinen",
+            "tyyppi": "puisto",
             "url": "https://joensuunvirta.fi/vanhajoensuu/content_img/kaupungintalo_1_b.jpg",
             "start": "1870",
             "end": "1975"

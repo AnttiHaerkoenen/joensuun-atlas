@@ -49,9 +49,10 @@
 			var timeline = L.timeline(data, {
 				waitToUpdateMap: true,
 				style: function (feature) {
-					switch (feature.properties.type) {
+					switch (feature.properties.tyyppi) {
 						case 'julkinen': return {color: "#0000ff"};
 						case 'yksityinen': return {color: "#ff0000"};
+						case 'puisto': return {color: "#00ff00"};
 					}
 				},
 				onEachFeature: function (feature, layer) {
