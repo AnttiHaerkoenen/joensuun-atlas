@@ -3,20 +3,23 @@
 	<base target="_top">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
+
 	<title>Joensuun historiallinen atlas</title>
-	
-	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+		integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+		integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 	<script src="./leaflet.timeline.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 	<style>
-		html, body {
+		html,
+		body {
 			height: 100%;
 			margin: 0;
 		}
+
 		.leaflet-container {
 			height: 600px;
 			width: 1000px;
@@ -27,27 +30,37 @@
 </head>
 
 <body>
-    <div id='map'></div>
-    <script>
-		START = -3777336510;
-		END = 1735673479;
-        var map = new L.map('map').setView([62.599977, 29.756126], 15);
+	<div id='map'></div>
+	<script>
+		START = -3777336510000;
+		END = 1735673479000;
+		var map = new L.map('map').setView([62.599977, 29.756126], 15);
 		var timeline;
 		var timelineControl;
+		var data_url = 'https://raw.githubusercontent.com/AnttiHaerkoenen/joensuun-atlas/refs/heads/main/data/';
+		var json1 = data_url + 'pisteet.geojson';
+		var json2 = data_url + 'talot.geojson';
 
-        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-		$.getJSON('https://raw.githubusercontent.com/AnttiHaerkoenen/joensuun-atlas/refs/heads/main/data/pisteet.geojson', function(data) {
+		L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+		}).addTo(map);
+
+		$.getJSON('https://raw.githubusercontent.com/AnttiHaerkoenen/joensuun-atlas/refs/heads/main/data/talot.geojson', function (data) {
 			var timeline = L.timeline(data, {
 				waitToUpdateMap: true,
+				style: function (feature) {
+					switch (feature.properties.type) {
+						case 'julkinen': return {color: "#0000ff"};
+						case 'yksityinen': return {color: "#ff0000"};
+					}
+				},
 				onEachFeature: function (feature, layer) {
 					layer.bindPopup('<img src="' + feature.properties.url + '"width="200" height="150">');
 				},
 			});
 			var timelineControl = L.timelineSliderControl({
 				formatOutput: function (date) {
-					return new Date(date).toLocaleDateString();
+					return new Date(date).getFullYear();
 				},
 				enableKeyboardControls: true,
 				start: START,
