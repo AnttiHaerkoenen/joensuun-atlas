@@ -49,7 +49,7 @@
             "tyyppi": "yksityinen",
             "url": "",
             "start": "1870",
-            "end": "1995"
+            "end": "1994"
         },
         "geometry": {
             "type": "Polygon",
@@ -78,6 +78,46 @@
                 [29.752194, 62.601691],
                 [29.751915, 62.601414],
                 [29.750510, 62.601678]
+            ]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+            "nimi": "Vanha talo",
+            "teksti": "Lorem ipsum",
+            "tyyppi": "yksityinen",
+            "url": "",
+            "start": "1860",
+            "end": "1934"
+        },
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [[
+                [29.750923, 62.596126],
+                [29.751631, 62.595993],
+                [29.751492, 62.595849],
+                [29.750816, 62.595988]
+            ]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+            "nimi": "Vanha talo",
+            "teksti": "Lorem ipsum",
+            "tyyppi": "yksityinen",
+            "url": "",
+            "start": "1850",
+            "end": "1964"
+        },
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [[
+                [29.760923, 62.596126],
+                [29.761631, 62.595993],
+                [29.761492, 62.595849],
+                [29.760816, 62.595988]
             ]]
         }
       }

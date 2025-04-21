@@ -54,7 +54,11 @@
 					}
 				},
 				onEachFeature: function (feature, layer) {
-					layer.bindPopup('<img src="' + feature.properties.url + '"width="200" height="150">');
+					layer.bindPopup(
+						'<div><h2>' + feature.properties.nimi + '</h2>' 
+							+ '<img src="' + feature.properties.url + '"width="200" height="150">' 
+							+ '<p>' + feature.properties.teksti + '</p></div>'
+					);
 				},
 			});
 			var timelineControl = L.timelineSliderControl({
