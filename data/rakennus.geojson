@@ -27,7 +27,7 @@
             "nimi": "Muu",
             "teksti": "Lorem ipsum",
             "tyyppi": "puisto",
-            "url": "https://joensuunvirta.fi/vanhajoensuu/content_img/kaupungintalo_1_b.jpg",
+            "url": "",
             "start": "1870",
             "end": "1975"
         },
@@ -38,6 +38,46 @@
                 [29.751470, 62.603179],
                 [29.750708, 62.602251],
                 [29.749174, 62.602641]
+            ]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+            "nimi": "Vanha talo",
+            "teksti": "Lorem ipsum",
+            "tyyppi": "yksityinen",
+            "url": "",
+            "start": "1870",
+            "end": "1995"
+        },
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [[
+                [29.749829, 62.603456],
+                [29.751202, 62.601866],
+                [29.750901, 62.601607],
+                [29.749174, 62.602641]
+            ]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+            "nimi": "Kirjasto",
+            "teksti": "Lorem ipsum",
+            "tyyppi": "julkinen",
+            "url": "",
+            "start": "1995",
+            "end": "2024"
+        },
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [[
+                [29.750708, 62.601942],
+                [29.752194, 62.601691],
+                [29.751915, 62.601414],
+                [29.750510, 62.601678]
             ]]
         }
       }
