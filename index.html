@@ -37,15 +37,13 @@
 		var map = new L.map('map').setView([62.599977, 29.756126], 15);
 		var timeline;
 		var timelineControl;
-		var data_url = 'https://raw.githubusercontent.com/AnttiHaerkoenen/joensuun-atlas/refs/heads/main/data/';
-		var json1 = data_url + 'pisteet.geojson';
-		var json2 = data_url + 'talot.geojson';
+		var data_url = 'https://raw.githubusercontent.com/AnttiHaerkoenen/joensuun-atlas/refs/heads/main/data/kohteet.geojson';
 
 		L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 		}).addTo(map);
 
-		$.getJSON('https://raw.githubusercontent.com/AnttiHaerkoenen/joensuun-atlas/refs/heads/main/data/talot.geojson', function (data) {
+		$.getJSON(data_url, function (data) {
 			var timeline = L.timeline(data, {
 				waitToUpdateMap: true,
 				style: function (feature) {
