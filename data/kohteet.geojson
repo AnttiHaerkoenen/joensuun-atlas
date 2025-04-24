@@ -1,26 +1,46 @@
 {
     "type": "FeatureCollection",
     "features": [
-      {
-        "type": "Feature",
-        "properties": {
-            "nimi": "Kaupungintalo",
+        {
+            "type": "Feature",
+            "properties": {
+            "nimi": "Pyhän Nikolaoksen kirkko",
             "teksti": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
             "tyyppi": "julkinen",
-            "url": "https://joensuunvirta.fi/vanhajoensuu/content_img/kaupungintalo_1_b.jpg",
-            "start": "1970",
-            "end": "2014"
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/57/Joensuu_Orth_Church.JPG",
+            "start": "1887",
+            "end": "2024"
         },
         "geometry": {
             "type": "Polygon",
             "coordinates": [[
-                [29.765278, 62.600175],
-                [29.765809, 62.600087],
-                [29.765546, 62.599724],
-                [29.764996, 62.599822]
+                [29.763199, 62.606266],
+                [29.763650, 62.606181],
+                [29.763508, 62.606060],
+                [29.763159, 62.606147]
             ]]
           }
         },
+        {
+            "type": "Feature",
+            "properties": {
+                "nimi": "Kaupungintalo",
+                "teksti": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+                "tyyppi": "julkinen",
+                "url": "https://joensuunvirta.fi/vanhajoensuu/content_img/kaupungintalo_1_b.jpg",
+                "start": "1911",
+                "end": "2014"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [[
+                    [29.765278, 62.600175],
+                    [29.765809, 62.600087],
+                    [29.765546, 62.599724],
+                    [29.764996, 62.599822]
+                ]]
+              }
+            },
       {
         "type": "Feature",
         "properties": {

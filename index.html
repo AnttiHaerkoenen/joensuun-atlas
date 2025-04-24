@@ -27,6 +27,14 @@
 			max-height: 100%;
 		}
 
+		.leaflet-control.leaflet-timeline-control .sldr-ctrl-container {
+			width: 180;
+		}
+
+		.leaflet-control.leaflet-timeline-control {
+			width: 200;
+		}
+
 		.Ikkuna {
 			text-align: left;
             top: 1%;
@@ -43,12 +51,12 @@
 		END = 1735673479000;
 		var map = new L.map(
 			'map', {
-				minZoom: 15,
+				minZoom: 14,
 				maxZoom: 18,
-				maxBounds: [[62.58935, 29.71081], [62.61139, 29.79192]],
-			}).setView([62.599977, 29.756126], 15);
-		var kuvakorkeus = "150";
-		var kuvaleveys = "200";
+				maxBounds: [[62.58935, 29.73081], [62.62, 29.77592]],
+			}).setView([62.599977, 29.756126], 14);
+		var kuvakorkeus = 150;
+		var kuvaleveys = 200;
 		var timeline;
 		var timelineControl;
 		var data_url = 'https://raw.githubusercontent.com/AnttiHaerkoenen/joensuun-atlas/refs/heads/main/data/kohteet.geojson';
@@ -62,7 +70,7 @@
 		var gylden = L.imageOverlay(img_url, bbox, {
 				opacity: opacity,
 				alt: 'Gyldenin kartta',
-				interactive: true,
+				interactive: false,
 			}).addTo(map);
 		var baselayers = {
 			'gylden': gylden,
